@@ -37,6 +37,7 @@ export default defineConfig([
       // Disable the base rule as it can report incorrect errors
       'no-unused-vars': 'off',
       'react/react-in-jsx-scope': 'off',
+      'no-control-regex': 'off',
     },
   },
 ])
