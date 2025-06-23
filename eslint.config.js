@@ -38,6 +38,7 @@ export default defineConfig([
       'no-unused-vars': 'off',
       'react/react-in-jsx-scope': 'off',
       'no-control-regex': 'off',
+      'react/display-name': 'off',
     },
   },
 ])

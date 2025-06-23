@@ -1,140 +1,129 @@
-import * as SC from './_styles'
-import { TypographyProps } from './_types'
+import styled from '@emotion/styled'
+import { css } from '@emotion/react'
+import { TypographyProps, Variant } from './_types'
 
-const D1 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.D1 {...props} style={{ ...sx }}>
-      {children}
-    </SC.D1>
-  )
+const textStyle: Record<Variant, ReturnType<typeof css>> = {
+  d1: css`
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 76px;
+    letter-spacing: -1px;
+  `,
+  h1: css`
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 76px;
+    letter-spacing: 0px;
+  `,
+  h2: css`
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0px;
+  `,
+  h3: css`
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0px;
+  `,
+  h4: css`
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0px;
+  `,
+  t1: css`
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+  `,
+  t2_600: css`
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0px;
+  `,
+  t2_500: css`
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0px;
+  `,
+  t3: css`
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0px;
+  `,
+  b1: css`
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+  `,
+  b2: css`
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
+  `,
+  b3: css`
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+  `,
+  b3_long: css`
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
+  `,
+  c1: css`
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+  `,
+  c2: css`
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0px;
+  `,
 }
 
-const H1 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.H1 {...props} style={{ ...sx }}>
-      {children}
-    </SC.H1>
-  )
-}
+const TypographyStyled = styled.span<TypographyProps>`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 
-const H2 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.H2 {...props} style={{ ...sx }}>
-      {children}
-    </SC.H2>
-  )
-}
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-const H3 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.H3 {...props} style={{ ...sx }}>
-      {children}
-    </SC.H3>
-  )
-}
+  padding: 0px;
+  margin: 0px;
 
-const H4 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.H4 {...props} style={{ ...sx }}>
-      {children}
-    </SC.H4>
-  )
-}
+  word-break: break-word;
 
-const T1 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.T1 {...props} style={{ ...sx }}>
-      {children}
-    </SC.T1>
-  )
-}
+  width: fit-content;
+  -webkit-line-clamp: ${({ lineClamp }) => lineClamp};
+  text-align: ${({ align }) => align};
+  color: ${({ color }) => color};
 
-const T2_600 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.T2_600 {...props} style={{ ...sx }}>
-      {children}
-    </SC.T2_600>
-  )
-}
+  ${({ variant }) => variant && textStyle[variant]}
+`
 
-const T2_500 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.T2_500 {...props} style={{ ...sx }}>
-      {children}
-    </SC.T2_500>
-  )
-}
-
-const T3 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.T3 {...props} style={{ ...sx }}>
-      {children}
-    </SC.T3>
-  )
-}
-
-const B1 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.B1 {...props} style={{ ...sx }}>
-      {children}
-    </SC.B1>
-  )
-}
-
-const B2 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.B2 {...props} style={{ ...sx }}>
-      {children}
-    </SC.B2>
-  )
-}
-
-const B3 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.B3 {...props} style={{ ...sx }}>
-      {children}
-    </SC.B3>
-  )
-}
-
-const B3_Long = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.B3_Long {...props} style={{ ...sx }}>
-      {children}
-    </SC.B3_Long>
-  )
-}
-
-const C1 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.C1 {...props} style={{ ...sx }}>
-      {children}
-    </SC.C1>
-  )
-}
-
-const C2 = ({ children, sx, ...props }: TypographyProps) => {
-  return (
-    <SC.C2 {...props} style={{ ...sx }}>
-      {children}
-    </SC.C2>
-  )
-}
-
-export const Typography = {
-  D1,
-  H1,
-  H2,
-  H3,
-  H4,
-  T1,
-  T2_600,
-  T2_500,
-  T3,
-  B1,
-  B2,
-  B3,
-  B3_Long,
-  C1,
-  C2,
-}
+export const Typography = ({
+  variant,
+  as = 'span',
+  children,
+  lineClamp = 1,
+  align = 'left',
+  color = '#121212',
+}: TypographyProps) => (
+  <TypographyStyled variant={variant} as={as} lineClamp={lineClamp} align={align} color={color}>
+    {children}
+  </TypographyStyled>
+)
